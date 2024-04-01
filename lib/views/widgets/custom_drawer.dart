@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:responsive_dashboard/models/drawer_item_model.dart';
+import 'package:responsive_dashboard/models/user_info_model.dart';
 import 'package:responsive_dashboard/utils/app_images.dart';
 import 'package:responsive_dashboard/views/widgets/active_and_inactive_item.dart';
 import 'package:responsive_dashboard/views/widgets/drawer_items_list_view.dart';
@@ -18,9 +17,10 @@ class CustomDrawer extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: UserInfoListTile(
-              title: 'Lekan Okeowo',
-              subtitle: 'demo@gmail.com',
-              image: Assets.imagesAvatar3,
+              userInfo: UserInfoModel(
+                  title: 'Lekan Okeowo',
+                  subTitle: 'demo@gmail.com',
+                  image: Assets.imagesAvatar2),
             ),
           ),
           SliverToBoxAdapter(child: SizedBox(height: 8)),
@@ -29,7 +29,10 @@ class CustomDrawer extends StatelessWidget {
             hasScrollBody: false,
             child: Column(
               children: [
-                Expanded(child: SizedBox(height: 20,)),
+                Expanded(
+                    child: SizedBox(
+                  height: 20,
+                )),
                 InActiveDrawerItem(
                   drawerItemModel: DrawerItemModel(
                       title: "Setting system", image: Assets.imagesSettings),
