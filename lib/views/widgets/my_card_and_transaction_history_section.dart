@@ -12,7 +12,6 @@ class MyCardAndTrasnactionHistorySection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-        
           MyCardsSection(),
           Divider(
             height: 40,
