@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dashboard/utils/app_styles.dart';
 import 'package:responsive_dashboard/views/widgets/custom_background_container.dart';
-import 'package:responsive_dashboard/views/widgets/my_card.dart';
+import 'package:responsive_dashboard/views/widgets/my_card_section.dart';
 import 'package:responsive_dashboard/views/widgets/transaction_history.dart';
 
 class MyCardAndTrasnactionHistorySection extends StatelessWidget {
@@ -13,12 +12,8 @@ class MyCardAndTrasnactionHistorySection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'My card',
-            style: AppStyles.styleSemiBold20,
-          ),
-          SizedBox(height: 20),
-          MyCard(),
+        
+          MyCardsSection(),
           Divider(
             height: 40,
             color: Color(0xFFF1F1F1),
