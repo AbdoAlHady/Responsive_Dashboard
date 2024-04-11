@@ -35,4 +35,4 @@ class TransactionHistoryListView extends StatelessWidget {
     //   },
     // );
   }
-},
+}
