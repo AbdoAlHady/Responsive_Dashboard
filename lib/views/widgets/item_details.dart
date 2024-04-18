@@ -20,13 +20,13 @@ class ItemDatails extends StatelessWidget {
       ),
       title: Text(
         item.title,
-        style: AppStyles.styleRegular16.copyWith(
+        style: AppStyles.styleRegular16(context).copyWith(
           color: const Color(0xFF064061),
         ),
       ),
       trailing: Text(
         item.amount,
-        style: AppStyles.styleMedium16.copyWith(
+        style: AppStyles.styleMedium16(context).copyWith(
           color: const Color(0xFF208CC8),
         ),
       ),
