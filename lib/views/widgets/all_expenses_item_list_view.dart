@@ -33,43 +33,47 @@ class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Row(
-        // children: item.map((e) => Expanded(child: AllExpensesItem(itemModle: e,))).toList(),
-
-        children: item.asMap().entries.map((e) {
-      int index = e.key;
-      var item = e.value;
-      if (index == 1) {
-        return Expanded(
-          child: GestureDetector(
-            onTap: () {
-                updateSelectedIndex(index);
-            },
-            child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: AllExpensesItem(
-                  itemModle: item,
-                  isSelected: index == currentIndex ? true : false,
-                )),
-          ),
-        );
-      } else {
-        return Expanded(
-            child: GestureDetector(
+    return Row(children: [
+      Expanded(
+        child: GestureDetector(
           onTap: () {
-            updateSelectedIndex(index);
+            updateSelectedIndex(0);
           },
           child: AllExpensesItem(
-            itemModle: item,
-            isSelected: index == currentIndex ? true : false,
+            itemModle: item[0],
+            isSelected: currentIndex == 0 ? true : false,
           ),
-        ));
-      }
-    }).toList());
+        ),
+      ),
+      const SizedBox(width: 12),
+      Expanded(
+        child: GestureDetector(
+          onTap: () {
+            updateSelectedIndex(1);
+          },
+          child: AllExpensesItem(
+            itemModle: item[1],
+            isSelected: currentIndex == 1 ? true : false,
+          ),
+        ),
+      ),
+      const SizedBox(width: 8),
+      Expanded(
+        child: GestureDetector(
+          onTap: () {
+            updateSelectedIndex(2);
+          },
+          child: AllExpensesItem(
+            itemModle: item[2],
+            isSelected: currentIndex == 2 ? true : false,
+          ),
+        ),
+      ),
+    ]);
   }
 
   void updateSelectedIndex(int index) {
-      currentIndex = index;
+    currentIndex = index;
     setState(() {});
   }
 }

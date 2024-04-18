@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:responsive_dashboard/views/widgets/all_expenses_item_header.dart';
 import 'package:responsive_dashboard/views/widgets/all_expenses_item_model.dart';
 
@@ -31,20 +33,28 @@ class InActiveAllExpensesItem extends StatelessWidget {
             image: itemModle.image,
           ),
           const SizedBox(height: 34),
-          Text(
-            itemModle.title,
-            style: AppStyles.styleSemiBold16(context),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModle.title,
+              style: AppStyles.styleSemiBold16(context),
+            ),
           ),
           const SizedBox(height: 8),
-          Text(itemModle.date, style: AppStyles.styleRegular14(context)),
+          FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(itemModle.date,
+                  style: AppStyles.styleRegular14(context))),
           const SizedBox(height: 16),
-          Text(itemModle.price, style: AppStyles.styleSemiBold24(context)),
+          FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(itemModle.price,
+                  style: AppStyles.styleSemiBold24(context))),
         ],
       ),
     );
   }
 }
-
 
 class ActiveAllExpensesItem extends StatelessWidget {
   const ActiveAllExpensesItem({
@@ -59,10 +69,10 @@ class ActiveAllExpensesItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: BoxDecoration(
-        color: const Color(0xFF4DB7F2 ),
+        color: const Color(0xFF4DB7F2),
         border: Border.all(
           width: 1,
-          color: const Color(0xFF4DB7F2 ),
+          color: const Color(0xFF4DB7F2),
         ),
       ),
       child: Column(
@@ -71,17 +81,31 @@ class ActiveAllExpensesItem extends StatelessWidget {
           AllExpensesItemHeader(
             image: itemModle.image,
             imageBackground: Colors.white.withOpacity(0.10),
-            imageColor:const Color(0xffFFFFFF) ,
+            imageColor: const Color(0xffFFFFFF),
           ),
           const SizedBox(height: 34),
-          Text(
-            itemModle.title,
-            style: AppStyles.styleSemiBold16(context).copyWith(color: Colors.white),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              itemModle.title,
+              style: AppStyles.styleSemiBold16(context)
+                  .copyWith(color: Colors.white),
+            ),
           ),
           const SizedBox(height: 8),
-          Text(itemModle.date, style: AppStyles.styleRegular14(context).copyWith(color:const Color(0xFFFAFAFA))),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(itemModle.date,
+                style: AppStyles.styleRegular14(context)
+                    .copyWith(color: const Color(0xFFFAFAFA))),
+          ),
           const SizedBox(height: 16),
-          Text(itemModle.price, style: AppStyles.styleSemiBold24(context).copyWith(color: Colors.white)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(itemModle.price,
+                style: AppStyles.styleSemiBold24(context)
+                    .copyWith(color: Colors.white)),
+          ),
         ],
       ),
     );
